@@ -1,8 +1,17 @@
 package com.sdd.cinemareservations;
 
-public class TooManyTicketsRequested extends Throwable {
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 
-    public TooManyTicketsRequested(final int partyRequested) {
+import java.util.List;
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class TooManyTicketsRequested extends SeatsAllocated {
+
+    public TooManyTicketsRequested(int partyRequested, List<Seat> reservedSeats) {
+        super(partyRequested, reservedSeats);
     }
-
 }

@@ -48,7 +48,11 @@
 			<artifactId>truth-java8-extension</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 </project>

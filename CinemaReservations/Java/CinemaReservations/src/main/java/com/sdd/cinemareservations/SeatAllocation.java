@@ -21,7 +21,6 @@ public class SeatAllocation {
     }
     public void addSeat(Seat seat)
     {
-        seat.updateAvailability(SeatAvailability.Reserved);
         allocatedSeats.add(seat);
     }
 }

@@ -8,7 +8,7 @@ public class TicketBooth {
         this.movieScreeningRepository = repo;
     }
 
-    public SeatsAllocated allocateSeats(AllocateSeats allocateSeats) throws TooManyTicketsRequested, NoPossibleAllocationsFound, NoMovieScreeningFound {
+    public SeatsAllocated allocateSeats(AllocateSeats allocateSeats) throws NoMovieScreeningFound {
         MovieScreening movieScreening = movieScreeningRepository.findMovieScreeningById(allocateSeats.showId());
         return movieScreening.allocateSeats(allocateSeats);
     }

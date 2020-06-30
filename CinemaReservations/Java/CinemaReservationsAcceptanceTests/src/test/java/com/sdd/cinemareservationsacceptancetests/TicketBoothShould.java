@@ -12,7 +12,7 @@ public class TicketBoothShould {
 
 
     @Test
-    public void reserve_one_seat_when_available() throws IOException, NoMovieScreeningFound, TooManyTicketsRequested, NoPossibleAllocationsFound {
+    public void reserve_one_seat_when_available() throws IOException, NoMovieScreeningFound {
         String showId = "1";
         int partyRequested = 1;
 
@@ -25,25 +25,30 @@ public class TicketBoothShould {
         assertThat(seatsAllocated.reservedSeats().get(0).toString()).isEqualTo("A3");
     }
 
-    @Test(expected = NoPossibleAllocationsFound.class)
-    public void return_SeatsNotAvailable_when_all_seats_are_unavailable() throws IOException, NoMovieScreeningFound, TooManyTicketsRequested, NoPossibleAllocationsFound {
+    @Test
+    public void return_SeatsNotAvailable_when_all_seats_are_unavailable() throws IOException, NoMovieScreeningFound {
         String showId = "5";
         int partyRequested = 1;
 
         MovieScreeningRepository repository =  new StubMovieScreeningRepository();
         TicketBooth ticketBooth = new TicketBooth(repository);
 
-        ticketBooth.allocateSeats(new AllocateSeats(showId, partyRequested));
+        SeatsAllocated seatsAllocated = ticketBooth.allocateSeats(new AllocateSeats(showId, partyRequested));
+
+        assertThat(seatsAllocated).isInstanceOf(NoPossibleAllocationsFound.class);
     }
 
-    @Test(expected = TooManyTicketsRequested.class)
-    public void return_TooManyTicketsRequested_when_9_tickets_are_requested() throws IOException, NoMovieScreeningFound, TooManyTicketsRequested, NoPossibleAllocationsFound {
+    @Test
+    public void return_TooManyTicketsRequested_when_9_tickets_are_requested() throws IOException, NoMovieScreeningFound {
         String showId = "5";
         int partyRequested = 9;
 
         MovieScreeningRepository repository =  new StubMovieScreeningRepository();
         TicketBooth ticketBooth = new TicketBooth(repository);
-        ticketBooth.allocateSeats(new AllocateSeats(showId, partyRequested));
+
+        SeatsAllocated seatsAllocated = ticketBooth.allocateSeats(new AllocateSeats(showId, partyRequested));
+
+        assertThat(seatsAllocated).isInstanceOf(TooManyTicketsRequested.class);
     }
 
 }

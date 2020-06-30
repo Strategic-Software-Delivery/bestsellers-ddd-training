@@ -1,8 +1,10 @@
 package com.sdd.cinemareservations;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 @EqualsAndHashCode
+@Getter
 public class Seat {
 
     private String rowName;
@@ -15,13 +17,18 @@ public class Seat {
         this.seatAvailability = seatAvailability;
     }
 
-    public void updateAvailability(SeatAvailability newAvailability)
+    public Seat updateAvailability(SeatAvailability newAvailability)
     {
         this.seatAvailability = newAvailability;
+        return new Seat(this.rowName, this.number, newAvailability);
     }
 
     public boolean isAvailable() {
         return seatAvailability == SeatAvailability.Available;
+    }
+
+    public boolean sameSeatLocation(Seat seat) {
+        return rowName.equals(seat.rowName) && number == seat.number;
     }
 
     @Override

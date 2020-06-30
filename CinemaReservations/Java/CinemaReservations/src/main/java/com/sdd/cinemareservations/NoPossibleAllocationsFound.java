@@ -1,6 +1,17 @@
 package com.sdd.cinemareservations;
 
-public class NoPossibleAllocationsFound extends Throwable {
-    public NoPossibleAllocationsFound(final int partyRequested) {
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+import java.util.List;
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class NoPossibleAllocationsFound extends SeatsAllocated {
+
+    public NoPossibleAllocationsFound(int partyRequested, List<Seat> reservedSeats) {
+        super(partyRequested, reservedSeats);
     }
 }
