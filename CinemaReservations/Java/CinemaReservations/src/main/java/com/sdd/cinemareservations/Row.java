@@ -34,18 +34,11 @@ public class Row {
         return new NoPossibleAllocationsFound(allocateSeats.partyRequested(), new ArrayList<>());
     }
 
-    public Row allocate(Seat seat) {
-        List<Seat> newVersionOfSeats = new ArrayList<>();
+    public Row makeSeatsReserved(List<Seat> updatedSeats) {
 
-        seats.forEach(currentSeat -> {
-            if (currentSeat.sameSeatLocation(seat)) {
-                newVersionOfSeats.add(new Seat(seat.rowName(), seat.number(),
-                        SeatAvailability.Reserved));
-            } else {
-                newVersionOfSeats.add(currentSeat);
-            }
-        });
-
-        return new Row(seat.rowName(), newVersionOfSeats);
+        for (Seat newSeat : updatedSeats) {
+            seats.set(seats.indexOf(newSeat), newSeat.reserveSeats());
+        }
+       return new Row(this.name, this.seats);
     }
 }

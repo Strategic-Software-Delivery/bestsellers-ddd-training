@@ -17,10 +17,8 @@ public class Seat {
         this.seatAvailability = seatAvailability;
     }
 
-    public Seat updateAvailability(SeatAvailability newAvailability)
-    {
-        this.seatAvailability = newAvailability;
-        return new Seat(this.rowName, this.number, newAvailability);
+    public Seat reserveSeats() {
+        return new Seat(this.rowName, this.number, SeatAvailability.Reserved);
     }
 
     public boolean isAvailable() {
