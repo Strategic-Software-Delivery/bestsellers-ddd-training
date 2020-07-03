@@ -62,7 +62,7 @@ public class TicketBoothShould {
         SeatsAllocated seatsAllocated = ticketBooth.allocateSeats(new AllocateSeats(showId, partyRequested));
 
         assertThat(seatsAllocated.reservedSeats()).hasSize(3);
-        assertThat((seatsAllocated.reservedSeats())).containsExactly("A8", "A9", "A10");
+        assertThat((seatsAllocated.seatNames())).containsExactly("A8", "A9", "A10");
     }
 
     @Test
