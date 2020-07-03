@@ -66,14 +66,16 @@ public class TicketBoothShould {
     }
 
     @Test
-    public void return_NoPossibleAdjacentSeatsFound_when_4_tickets_are_requested() throws IOException {
+    public void return_NoPossibleAdjacentSeatsFound_when_4_tickets_are_requested() throws IOException, NoMovieScreeningFound {
         String showId = "2";
         int partyRequested = 4;
 
         MovieScreeningRepository repository =  new StubMovieScreeningRepository();
         TicketBooth ticketBooth = new TicketBooth(repository);
 
-        assertThat(true).isFalse();;
+        SeatsAllocated seatsAllocated = ticketBooth.allocateSeats(new AllocateSeats(showId, partyRequested));
+
+        assertThat(seatsAllocated).isInstanceOf(NoPossibleAdjacentSeatsFound.class);
     }
 
 

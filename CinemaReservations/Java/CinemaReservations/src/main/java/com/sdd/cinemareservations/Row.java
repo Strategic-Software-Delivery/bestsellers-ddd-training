@@ -36,6 +36,10 @@ public class Row {
         return new NoPossibleAllocationsFound(allocateSeats.partyRequested(), new ArrayList<>());
     }
 
+    public int returnNumberOfSeatsAvailable() {
+        return (int) seats.stream().filter(Seat::isAvailable).count();
+    }
+
     public Row makeSeatsReserved(List<Seat> updatedSeats) {
 
         for (Seat newSeat : updatedSeats) {
