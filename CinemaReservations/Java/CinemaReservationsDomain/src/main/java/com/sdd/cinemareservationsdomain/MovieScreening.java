@@ -1,13 +1,18 @@
 package com.sdd.cinemareservationsdomain;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.Map;
 
+@Data
 public class MovieScreening {
+    private String id;
     private Map<String, Row> rows;
     private final int MAXIMUM_NUMBER_OF_ALLOWED_TICKETS = 8;
 
-    public MovieScreening(Map<String, Row> rows) {
+    public MovieScreening(String id, Map<String, Row> rows) {
+        this.id = id;
         this.rows = rows;
     }
 

@@ -62,6 +62,11 @@ public class StubMovieScreeningRepository implements MovieScreeningRepository {
         return new MovieScreening(rows);
     }
 
+    @Override
+    public MovieScreening finaliseAllocation(MovieScreening movieScreening) {
+        return movieScreening;
+    }
+
     private SeatAvailability extractAvailability(final String seatAvailability) {
 
         switch(seatAvailability) {

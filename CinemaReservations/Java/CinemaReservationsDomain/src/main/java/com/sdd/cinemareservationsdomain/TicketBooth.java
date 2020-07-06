@@ -10,6 +10,11 @@ public class TicketBooth {
 
     public SeatsAllocated allocateSeats(AllocateSeats allocateSeats) throws NoMovieScreeningFound {
         MovieScreening movieScreening = movieScreeningRepository.findMovieScreeningById(allocateSeats.showId());
-        return movieScreening.allocateSeats(allocateSeats);
+
+        SeatsAllocated seatsAllocated =  movieScreening.allocateSeats(allocateSeats);
+        if(!(seatsAllocated instanceof NoPossibleAdjacentSeatsFound || seatsAllocated instanceof NoPossibleAllocationsFound)) {
+            movieScreeningRepository.finaliseAllocation(movieScreening);
+        }
+        return seatsAllocated;
     }
 }
