@@ -10,54 +10,26 @@
 	</parent>
 
     <packaging>jar</packaging>
-	<artifactId>CinemaReservationsAcceptanceTests</artifactId>
+	<artifactId>CinemaReservationsInfra</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CinemaReservationsAcceptanceTests</name>
+	<name>CinemaReservationsInfra</name>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.sdd</groupId>
-			<artifactId>CinemaReservationsDomain</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>com.sdd</groupId>
+            <artifactId>CinemaReservationsDomain</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>com.sdd</groupId>
-			<artifactId>CinemaReservationsInfra</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
-
-
-
-
-		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-guava</artifactId>
 		</dependency>
 
 		<!-- TEST dependencies -->
@@ -86,14 +58,32 @@
 			<artifactId>truth-java8-extension</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 	</dependencies>
+
+	 <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

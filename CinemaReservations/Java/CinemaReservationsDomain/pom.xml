@@ -10,11 +10,15 @@
 	</parent>
 
     <packaging>jar</packaging>
-	<artifactId>CinemaReservations</artifactId>
+	<artifactId>CinemaReservationsDomain</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CinemaReservations</name>
+	<name>CinemaReservationsDomain</name>
 
 	<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>

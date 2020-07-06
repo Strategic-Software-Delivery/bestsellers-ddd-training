@@ -3,7 +3,7 @@ package com.sdd.cinemareservationsacceptancetests.StubMovieScreening;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.guava.GuavaModule;
 import com.google.common.collect.ImmutableList;
-import com.sdd.cinemareservations.*;
+import com.sdd.cinemareservationsdomain.*;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;

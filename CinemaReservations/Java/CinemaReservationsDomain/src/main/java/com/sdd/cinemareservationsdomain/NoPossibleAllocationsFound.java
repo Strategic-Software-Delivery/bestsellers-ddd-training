@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -9,9 +9,9 @@ import java.util.List;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class TooManyTicketsRequested extends SeatsAllocated {
+public class NoPossibleAllocationsFound extends SeatsAllocated {
 
-    public TooManyTicketsRequested(int partyRequested, List<Seat> reservedSeats) {
+    public NoPossibleAllocationsFound(int partyRequested, List<Seat> reservedSeats) {
         super(partyRequested, reservedSeats);
     }
 }

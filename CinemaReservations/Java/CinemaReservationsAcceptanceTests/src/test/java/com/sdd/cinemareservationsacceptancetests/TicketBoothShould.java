@@ -1,6 +1,6 @@
 package com.sdd.cinemareservationsacceptancetests;
 
-import com.sdd.cinemareservations.*;
+import com.sdd.cinemareservationsdomain.*;
 import com.sdd.cinemareservationsacceptancetests.StubMovieScreening.StubMovieScreeningRepository;
 import org.junit.Test;
 

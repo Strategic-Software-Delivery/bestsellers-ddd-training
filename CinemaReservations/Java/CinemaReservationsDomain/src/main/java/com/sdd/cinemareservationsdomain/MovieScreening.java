@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 import java.util.ArrayList;
 import java.util.Map;

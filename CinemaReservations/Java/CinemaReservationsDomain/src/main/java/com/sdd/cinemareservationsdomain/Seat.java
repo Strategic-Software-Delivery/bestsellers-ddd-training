@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

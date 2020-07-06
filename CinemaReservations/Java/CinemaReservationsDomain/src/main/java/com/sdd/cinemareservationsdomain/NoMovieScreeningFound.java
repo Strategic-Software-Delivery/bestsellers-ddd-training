@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 public class NoMovieScreeningFound extends Exception {
 

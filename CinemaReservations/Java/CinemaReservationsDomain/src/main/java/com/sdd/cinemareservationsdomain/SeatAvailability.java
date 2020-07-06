@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 public enum SeatAvailability {
     Reserved,

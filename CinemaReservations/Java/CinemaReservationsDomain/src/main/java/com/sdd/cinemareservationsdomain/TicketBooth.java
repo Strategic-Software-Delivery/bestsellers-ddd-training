@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 public class TicketBooth {
     private MovieScreeningRepository movieScreeningRepository;

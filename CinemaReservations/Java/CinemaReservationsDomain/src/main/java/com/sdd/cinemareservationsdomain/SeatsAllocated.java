@@ -1,4 +1,4 @@
-package com.sdd.cinemareservations;
+package com.sdd.cinemareservationsdomain;
 
 import lombok.Value;
 import lombok.experimental.NonFinal;
