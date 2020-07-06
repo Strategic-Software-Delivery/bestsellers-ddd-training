@@ -59,7 +59,7 @@ public class StubMovieScreeningRepository implements MovieScreeningRepository {
             rows.put(rowDto.getKey(), new Row(rowDto.getKey(), seats));
         }
 
-        return new MovieScreening(rows);
+        return new MovieScreening(showId, rows);
     }
 
     @Override
